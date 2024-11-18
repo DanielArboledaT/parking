@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "parkingManager"
+  devtools:
+    add-properties: false
+  h2:
+    console:
+      enabled: true
+      path: "/h2"
+  profiles:
+    include: local
+aws:
+  dynamodb:
+    endpoint: "http://0.0.0.0:4566"
+  region: "us-east-1"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+jwt:
+  secret: ${JWT_SECRET:c8b9c8ade9b556f2c3c04321e16595608217f513caa0db0e99a78ec85cf8d6c432fd76bde46888b4f03a3cb584dcf0a260602aa2fec051560a77ec43631e7ae324ea065b32dce24385726464aef209e9b0baa8a3205d68cb5df526e7ad4764d7396f4ecf76bc6fe2fe6325afaf6d44a09ded3b5ec3b3fa82fe2f2cbb101ff7364666eb8889182aa8a2dd1bc42ac8be963921353f54dbc043393a102859fd19abf6a397854cc1b07f385e4239456036a45a449f5b21bf2c39c7d5551db962b4ba96f27b10d22901a4334ce48a30d8b12c24e1190b37a7743bea6968ab9527c83498e3ec8fac43144cfbefc4a8ca163de86ad1e501897a410a5f2c3a0d5c496b92}
+  expiration: ${JWT_EXPIRATION:100000}

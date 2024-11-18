@@ -1,0 +1,13 @@
+dependencies {
+    implementation project(':model')
+    implementation project(':jwt')
+    implementation 'org.springframework:spring-context'
+    implementation 'software.amazon.awssdk:dynamodb-enhanced'
+    implementation 'org.reactivecommons.utils:object-mapper-api:0.1.0'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
+    testImplementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+    implementation 'org.mapstruct:mapstruct:1.6.2'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.2'
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    testImplementation("org.springframework.security:spring-security-test")
+}
